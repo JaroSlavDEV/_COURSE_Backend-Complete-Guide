@@ -1,0 +1,17 @@
+{
+    "runner": "jest-runner",
+    "displayName": "test:unit",
+    "rootDir": "../",
+    "verbose": false,
+    "notify": true,
+    "bail": false,
+    "collectCoverage": false,
+    "collectCoverageFrom": ["<rootDir>/**/*.js"],
+    "coveragePathIgnorePatterns": [],
+    "modulePaths": ["<rootDir>/source", "<rootDir>/node_modules"],
+    "moduleFileExtensions": ["js", "json"],
+    "globalSetup": "<rootDir>/jest/scripts/globalSetup.js",
+    "globalTeardown": "<rootDir>/jest/scripts/globalTeardown.js",
+    "setupFiles": ["<rootDir>/jest/scripts/setupFiles.js"],
+    "testURL": "http://www.test.com"
+}

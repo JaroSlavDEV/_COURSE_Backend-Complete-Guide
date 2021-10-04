@@ -1,0 +1,21 @@
+{
+    "name": "3-nock",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --no-cache --verbose --detectOpenHandles --forceExit --projects 'jest/jest.test.config.json'"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-session": "^1.17.0",
+        "jest": "^24.9.0",
+        "nock": "^11.7.0",
+        "request": "^2.88.0",
+        "request-promise": "^4.2.4",
+        "supertest": "^4.0.2"
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "example-5",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "start:debug": "node --inspect-brk index.js"
+  }
+}

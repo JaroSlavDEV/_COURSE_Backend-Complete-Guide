@@ -1,0 +1,14 @@
+{
+    "name": "1-helmet",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "nodemon --experimental-modules index.mjs"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "helmet": "^3.21.2",
+        "nodemon": "^1.19.4"
+    }
+}

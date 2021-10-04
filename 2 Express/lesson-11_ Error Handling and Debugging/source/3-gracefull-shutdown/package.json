@@ -1,0 +1,13 @@
+{
+    "name": "3-gracefull-shutdown",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "@godaddy/terminus": "^4.2.0",
+        "express": "^4.17.1"
+    }
+}

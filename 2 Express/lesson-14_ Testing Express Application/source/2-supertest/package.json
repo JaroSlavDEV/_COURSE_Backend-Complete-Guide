@@ -1,0 +1,18 @@
+{
+    "name": "2-supertest",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --no-cache --verbose --detectOpenHandles --forceExit --projects 'jest/jest.test.config.json'"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-session": "^1.17.0",
+        "jest": "^24.9.0",
+        "supertest": "^4.0.2"
+    }
+}

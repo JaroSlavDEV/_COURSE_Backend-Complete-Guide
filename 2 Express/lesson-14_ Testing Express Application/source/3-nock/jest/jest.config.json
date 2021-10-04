@@ -1,0 +1,6 @@
+{
+    "rootDir": "../",
+    "projects": [
+        "<rootDir>/jest/jest.test.config.json"
+    ]
+}

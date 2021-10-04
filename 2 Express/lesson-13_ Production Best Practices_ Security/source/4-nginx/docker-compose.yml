@@ -1,0 +1,53 @@
+version: '2.4'
+
+services:
+  proxy:
+    image: fholzer/nginx-brotli
+    container_name: proxy
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /etc/letsencrypt/live/sotream.xyz/privkey.pem:/etc/ssl/private/privkey.pem
+      - /etc/letsencrypt/live/sotream.xyz/fullchain.pem:/etc/ssl/private/fullchain.pem
+      - /etc/letsencrypt/live/sotream.xyz/chain.pem:/etc/ssl/private/chain.pem
+      - ./proxy/dhparam.pem:/etc/pki/nginx/dhparam.pem
+      - ./proxy/nginx.conf:/etc/nginx/nginx.conf
+      - ./proxy/sotream.conf:/etc/nginx/conf.d/sotream.conf
+    restart: always
+    networks:
+      - back
+      - front
+
+  # Backend
+  school-api:
+    build: ./school-api/install
+    image: school/api:0.0.1
+    container_name: school-api
+    environment:
+      - PORT=3000
+      - PASSWORD=Very_strong_pa$$word_is%123456789
+    volumes:
+      - ./school-api/index.js:/usr/src/app/index.js
+    restart: always
+    command: node index.js
+    networks:
+      - back
+
+  # Frontend
+  school:
+    image: fholzer/nginx-brotli
+    container_name: school
+    volumes:
+      - ./school/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./school/nginx/sotream.conf:/etc/nginx/conf.d/sotream.conf
+      - ./school/ui:/var/www/html
+    restart: always
+    networks:
+      - front
+
+networks:
+  back:
+    driver: bridge
+  front:
+    driver: bridge

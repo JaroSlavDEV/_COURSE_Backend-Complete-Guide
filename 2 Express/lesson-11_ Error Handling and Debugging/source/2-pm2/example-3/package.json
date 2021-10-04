@@ -1,0 +1,13 @@
+{
+    "name": "example-2",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "pm2 start index.js -i 'max'"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "pm2": "^4.1.2"
+    }
+}

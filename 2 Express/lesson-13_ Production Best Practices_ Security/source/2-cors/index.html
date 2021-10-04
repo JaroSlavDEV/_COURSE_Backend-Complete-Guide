@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lectrum LLC</title>
+</head>
+<body>
+    <h1>Login:</h1>
+    <form id="form_post">
+        <input name='email' type="text"/>
+        <input value='post' type="submit"/>
+    </form>
+    <h2>Update:</h2>
+    <form id="form_put">
+        <input name='email' type="text"/>
+        <input value='update' type="submit"/>
+    </form>
+    <h2>Remove:</h2>
+    <form id="form_remove">
+        <input name='email' type="text"/>
+        <input value='remove' type="submit"/>
+    </form>
+    <script>
+        const form_post = document.getElementById('form_post');
+        const form_put = document.getElementById('form_put');
+        const form_remove = document.getElementById('form_remove');
+        form_post.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            fetch('http://localhost:3000/api/login', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                data: JSON.stringify({ email: 'j.doe@example.com' })
+            }).then((response) => {
+                return response.json();
+            }).then((data) => {
+                console.log(data);
+            }).catch((error) => {
+                console.error(error);
+            })
+        });
+        form_put.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            fetch('http://localhost:3000/api/users', {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                data: JSON.stringify({ email: 'j.doe@example.com' })
+            }).then((response) => {
+                return response.json();
+            }).then((data) => {
+                console.log(data);
+            }).catch((error) => {
+                console.error(error);
+            })
+        });
+        form_remove.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            fetch('http://localhost:3000/api/users', {
+                method: 'DELETE',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                data: JSON.stringify({ email: 'j.doe@example.com' })
+            }).then((response) => {
+                return response.json();
+            }).then((data) => {
+                console.log(data);
+            }).catch((error) => {
+                console.error(error);
+            })
+        });
+    </script>
+</body>
+</html>

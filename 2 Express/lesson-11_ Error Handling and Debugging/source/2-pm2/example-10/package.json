@@ -1,0 +1,15 @@
+{
+  "name": "example-3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "pm2 start ./pm2.config.js",
+    "start:service-1": "pm2 start service-1",
+    "stop:service-1": "pm2 stop service-1",
+    "restart:service-1": "pm2 restart service-1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "example-8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "start": "DEBUG='marker:*' node index.js",
+    "start1": "DEBUG=marker:1,marker:2 node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.1.1"
+  }
+}

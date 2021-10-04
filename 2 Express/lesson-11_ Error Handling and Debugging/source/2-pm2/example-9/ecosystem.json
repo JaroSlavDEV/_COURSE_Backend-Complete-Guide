@@ -1,0 +1,28 @@
+{
+    "apps": [
+        {
+            "name": "SCHOOL-API",
+            "script": "build/index.js",
+            "env": {
+                "COMMON_VARIABLE": "true"
+            },
+            "env_production": {
+                "NODE_ENV": "production"
+            }
+        }
+    ],
+    "deploy": {
+        "production": {
+            "user": "ubuntu",
+            "ssh_options": "StrictHostKeyChecking=no",
+            "host": ["18.195.151.104"],
+            "ref": "origin/master",
+            "repo": "https://github.com/Lectrum/backend-intensive-3.git",
+            "path": "/home/ubuntu/test",
+            "post-setup": "yarn && yarn build && ls -la && PORT=3000 node build/index.js",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    }
+}
